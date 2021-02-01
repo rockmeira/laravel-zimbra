@@ -111,7 +111,7 @@ class ZimbraApiClient
         $right = new DistributionListRightSpec("sendAsDistList", [$grantee]);
         $dl = new DistributionListSelector(DistributionListBy::Name(), $distListName);
         $a = $this->createKeyPair();
-        $action = new DLAction(Operation::GRANT_RIGHTS(), null, null, [], [], [$right], [$a]);
+        $action = new DLAction(Operation::REVOKE_RIGHTS(), null, null, [], [], [$right], [$a]);
         $attr = $this->createKeyPair();
 
         return $this->api->distributionListAction($dl, $action, [$attr]);
